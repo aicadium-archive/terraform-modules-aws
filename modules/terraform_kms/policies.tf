@@ -31,7 +31,7 @@ data "aws_iam_policy_document" "all_keys_admin" {
 }
 
 resource "aws_iam_policy" "all_keys_admin" {
-  name        = "${var.all_keys_admin_policy}"
+  name        = var.all_keys_admin_policy
   description = "Allows administration to all KMS keys in the account"
-  policy      = "${data.aws_iam_policy_document.all_keys_admin.json}"
+  policy      = data.aws_iam_policy_document.all_keys_admin.json
 }
