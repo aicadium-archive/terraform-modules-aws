@@ -1,3 +1,7 @@
+variable "region" {
+  description = "AWS Region"
+}
+
 variable "kms_terraform_alias" {
   description = "Alias for the Terraform key"
   default     = "alias/terraform"
