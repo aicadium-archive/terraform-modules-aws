@@ -31,6 +31,8 @@ data "aws_iam_policy_document" "all_keys_admin" {
 }
 
 resource "aws_iam_policy" "all_keys_admin" {
+  count = var.create_all_keys_policy ? 1 : 0
+
   name        = var.all_keys_admin_policy
   description = "Allows administration to all KMS keys in the account"
   policy      = data.aws_iam_policy_document.all_keys_admin.json

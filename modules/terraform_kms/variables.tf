@@ -12,3 +12,8 @@ variable "tags" {
   description = "Tags for resoruces"
   default     = {}
 }
+
+variable "create_all_keys_policy" {
+  description = "Create the all keys policy"
+  default     = true
+}
